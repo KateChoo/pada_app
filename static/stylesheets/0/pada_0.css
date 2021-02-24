@@ -1,0 +1,19 @@
+@import url("../reset.css");
+/*big screen @media 1200pc*/
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+/*# sourceMappingURL=pada_0.css.map */
