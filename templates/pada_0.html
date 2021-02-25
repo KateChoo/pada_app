@@ -5,62 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pada_0</title>
-    <link rel="stylesheet" href="/static/stylesheets/0/pada_0.css">
+    <link rel="stylesheet" href="/static/stylesheets/pada_0/pada_0.css">
 </head>
 <body>
     <header>
-        <h1>Welcom to pada_0</h1>
         <nav>
-            <a href="http://127.0.0.1:5500/">Home</a>
-            <ul id='navigation'>
+            <a href="http://127.0.0.1:5500/">My Website</a>
+
+            <ul id='nav'>
+                <span class="1 span1"></span>
+                <span class="2"></span>
+                <span class="3"></span>
                 {#}
                 {% for item in navigation %}
                 <!-- <li><a href="{{ item.href }}">{{ item.caption }}</a></li> -->
                     <li><a>{{item}}</a></li>
                 {% endfor %}
                 #}
-                <li><a>item1</a></li>
-                <li><a>item2</a></li>
-                <li><a>item3</a></li>
-                <li><a>item4</a></li>
+                <li class='show'><a>item1</a></li>
+                <li class='show'><a>item2</a></li>
+                <li class='show'><a>item3</a></li>
+                <li class='show'><a>item4</a></li>
             </ul>
         </nav>
+        <div>
+            <h1>Welcom to pada_0</h1>
+        </div>
     </header>
     <main>
         <ul>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/244/280/200" alt="">
+                <p>Title 1</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/277/280/200" alt="">
+                <p>Title 2</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/287/280/200" alt="">
+                <p>Title 3</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/297/280/200" alt="">
+                <p>Title 4</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/231/280/200" alt="">
+                <p>Title 5</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/232/280/200" alt="">
+                <p>Title 6</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/233/280/200" alt="">
+                <p>Title 7</p>
             </li>
             <li>
-                <img src="" alt="">
-                <p></p>
+                <img src="https://picsum.photos/id/239/280/200" alt="">
+                <p>Title 8</p>
             </li>
         </ul>
     </main>
+    <script src="../static/js/pada_0.js"> </script>
 </body>
 </html>

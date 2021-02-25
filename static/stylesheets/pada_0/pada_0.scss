@@ -1,0 +1,111 @@
+@import url('../reset.css');
+@import '_variable';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+img{
+  display: block;
+}
+
+/*===*===*===*===*===*===*===*===*===
+              all
+===*===*===*===*===*===*===*===*===*/
+body{
+  font-size: $base_fz;
+}
+header {
+  max-width: 100%;
+  nav{
+    display: flex;
+    justify-content: space-around;
+    a{
+      margin-right: auto;
+      padding: .5rem 0;
+    }
+    ul {
+      display: flex;
+      padding: .5rem 0;
+      li{
+        padding-left: .5rem;
+      }
+    }
+  }
+  div{
+    height: $header_max-height;
+    background: rgb(216, 216, 235);
+    display: grid;
+    h1{
+      display: grid;
+      justify-self: center;
+      align-self: center;
+      font-size: $header_fz;
+    }
+  }
+}
+main{
+  ul{  
+    @include flexCenter;
+  }
+  li{
+    background: rgb(216, 216, 235);
+    margin-top: 1.5rem;
+    margin: 5px;
+    p{
+      text-align: center;
+      padding: .5rem;
+    }
+  }
+}
+/*===*===*===*===*===*===*===*===*===
+            600~1200 
+===*===*===*===*===*===*===*===*===*/
+main{
+  max-width: $main_max-width;
+  margin: 0 auto;
+  ul{  
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/*===*===*===*===*===*===*===*===*===
+                  600 
+===*===*===*===*===*===*===*===*===*/
+
+@media only screen and (max-width: 600px) {
+  header nav {
+    ul{
+      flex-direction: column;
+      span{
+        @include hamberger
+      }
+    }
+    li{
+      display:none;
+    }
+  }
+  main{
+    max-width: $main_max-width/2;
+    ul{  
+      flex-direction: column;
+    }
+  }
+  // header nav ul span::after{
+  //   @include hamberger;
+  //   transform: translateY(-15px);
+  // }
+  // header nav ul span::before{
+  //   @include hamberger;
+  //   // transform: translateY(-5px);
+  // }
+}
+
+// span1-{
+//   transform: rotate('45deg')
+// }
