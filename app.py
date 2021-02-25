@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template
 app = Flask(__name__)
 
@@ -34,5 +35,8 @@ def pada_0():
     return render_template('/pada_0.html')
 
 
+# if __name__ == '__main__':
+#     app.run(debug=True, port=5500)
 if __name__ == '__main__':
-    app.run(debug=True, port=5500)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, port=port, host="0.0.0.0")
