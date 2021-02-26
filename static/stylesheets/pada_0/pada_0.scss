@@ -81,13 +81,13 @@ main{
 @media only screen and (max-width: 600px) {
   header nav {
     ul{
-      flex-direction: column;
       span{
         @include hamberger
       }
     }
     li{
-      display:none;
+      display: none;
+      transform: translateX(-50px) translateY(50px);
     }
   }
   main{
@@ -105,7 +105,3 @@ main{
   //   // transform: translateY(-5px);
   // }
 }
-
-// span1-{
-//   transform: rotate('45deg')
-// }
