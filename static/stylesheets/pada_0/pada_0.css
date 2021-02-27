@@ -98,7 +98,7 @@ main li p {
 ===*===*===*===*===*===*===*===*===*/
 @media only screen and (min-width: 1200px) {
   main {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   main ul {

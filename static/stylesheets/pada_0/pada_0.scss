@@ -70,7 +70,7 @@ main {
 ===*===*===*===*===*===*===*===*===*/
 @media only screen and (min-width: 1200px) {
   main {
-    max-width: $main_max-width/2;
+    max-width: $main_max-width;
     margin: 0 auto;
     ul {
       display: grid;
