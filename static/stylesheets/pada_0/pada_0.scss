@@ -1,77 +1,94 @@
-@import url('../reset.css');
-@import '_variable';
+@import url("../reset.css");
+@import "_variable";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-img{
+img {
   display: block;
+  width: 100%;
 }
 
 /*===*===*===*===*===*===*===*===*===
               all
 ===*===*===*===*===*===*===*===*===*/
-body{
+body {
   font-size: $base_fz;
 }
 header {
   max-width: 100%;
-  nav{
+  nav {
     display: flex;
     justify-content: space-around;
-    a{
+    a {
       margin-right: auto;
-      padding: .5rem 0;
+      padding: 0.5rem 0;
     }
     ul {
       display: flex;
-      padding: .5rem 0;
-      li{
-        padding-left: .5rem;
+      padding: 0.5rem 0;
+      li {
+        padding-left: 0.5rem;
       }
     }
   }
-  div{
+  div {
     height: $header_max-height;
     background: rgb(216, 216, 235);
     display: grid;
-    h1{
-      display: grid;
+    h1 {
       justify-self: center;
       align-self: center;
       font-size: $header_fz;
     }
   }
 }
-main{
-  ul{  
+main {
+  ul {
     @include flexCenter;
   }
-  li{
+  li {
     background: rgb(216, 216, 235);
     margin-top: 1.5rem;
     margin: 5px;
-    p{
+    p {
       text-align: center;
-      padding: .5rem;
+      padding: 0.5rem;
+    }
+  }
+}
+/*===*===*===*===*===*===*===*===*===
+            1200 
+===*===*===*===*===*===*===*===*===*/
+@media only screen and (min-width: 1200px) {
+  main {
+    max-width: $main_max-width/2;
+    margin: 0 auto;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
 /*===*===*===*===*===*===*===*===*===
             600~1200 
 ===*===*===*===*===*===*===*===*===*/
-main{
-  max-width: $main_max-width;
-  margin: 0 auto;
-  ul{  
-    flex-direction: row;
-    flex-wrap: wrap;
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  main {
+    max-width: $main_max-width/2;
+    margin: 0 auto;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 }
 /*===*===*===*===*===*===*===*===*===
@@ -79,21 +96,28 @@ main{
 ===*===*===*===*===*===*===*===*===*/
 
 @media only screen and (max-width: 600px) {
+  header div{
+    max-width: 100%;
+  }
   header nav {
-    ul{
-      span{
-        @include hamberger
+    ul {
+      flex-direction: column;
+      span {
+        @include hamberger;
       }
     }
-    li{
+    li {
       display: none;
-      transform: translateX(-50px) translateY(50px);
     }
   }
-  main{
+  main {
     max-width: $main_max-width/2;
-    ul{  
+    ul {
       flex-direction: column;
+      img {
+        max-width: 100%;
+        width: 480px;
+      }
     }
   }
   // header nav ul span::after{
@@ -105,3 +129,7 @@ main{
   //   // transform: translateY(-5px);
   // }
 }
+
+// span1-{
+//   transform: rotate('45deg')
+// }

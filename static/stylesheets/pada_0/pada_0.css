@@ -1,5 +1,7 @@
 @import url("../reset.css");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -14,6 +16,7 @@ li {
 
 img {
   display: block;
+  width: 100%;
 }
 
 /*===*===*===*===*===*===*===*===*===
@@ -37,18 +40,18 @@ header nav {
 
 header nav a {
   margin-right: auto;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 header nav ul li {
-  padding-left: .5rem;
+  padding-left: 0.5rem;
 }
 
 header div {
@@ -59,11 +62,10 @@ header div {
 }
 
 header div h1 {
-  display: -ms-grid;
-  display: grid;
   -ms-grid-column-align: center;
       justify-self: center;
-  -ms-grid-row-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
   font-size: 40px;
 }
@@ -88,30 +90,48 @@ main li {
 
 main li p {
   text-align: center;
-  padding: .5rem;
+  padding: 0.5rem;
+}
+
+/*===*===*===*===*===*===*===*===*===
+            1200 
+===*===*===*===*===*===*===*===*===*/
+@media only screen and (min-width: 1200px) {
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  main ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /*===*===*===*===*===*===*===*===*===
             600~1200 
 ===*===*===*===*===*===*===*===*===*/
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-main ul {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+@media only screen and (min-width: 600px) and (max-width: 1200px) {
+  main {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  main ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /*===*===*===*===*===*===*===*===*===
                   600 
 ===*===*===*===*===*===*===*===*===*/
 @media only screen and (max-width: 600px) {
+  header div {
+    max-width: 100%;
+  }
   header nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -136,6 +156,10 @@ main ul {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  main ul img {
+    max-width: 100%;
+    width: 480px;
   }
 }
 /*# sourceMappingURL=pada_0.css.map */
