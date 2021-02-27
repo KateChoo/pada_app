@@ -114,7 +114,7 @@ main li p {
 ===*===*===*===*===*===*===*===*===*/
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
   main {
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
   }
   main ul {
@@ -122,6 +122,18 @@ main li p {
     display: grid;
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  main ul li {
+    max-width: 90%;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  main ul img {
+    max-width: 100%;
+    width: 500px;
   }
 }
 

@@ -83,11 +83,20 @@ main {
 ===*===*===*===*===*===*===*===*===*/
 @media only screen and (min-width: 600px) and (max-width: 1200px) {
   main {
-    max-width: $main_max-width/2;
+    max-width: $main_max-width;
     margin: 0 auto;
     ul {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      li{
+        max-width: 90%;
+        justify-self: center;
+        align-self: center;
+      }
+      img {
+        max-width: 100%;
+        width: 500px;
+      }
     }
   }
 }
