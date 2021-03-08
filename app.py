@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 author_name = "K"
@@ -30,9 +30,28 @@ def home():
                            )
 
 
-@ app.route('/pada_0')
-def pada_0():
-    return render_template('/pada_0.html')
+@ app.route('/pada_2')
+def pada_2():
+    return render_template('/pada_2.html')
+
+
+app.config['IMAGE_UPLOADS'] = '/Users/choochoo/Desktop/2021/pongpong/pada_app/static/img/uploads'
+
+
+@app.route('/pada_1', methods=['GET', 'POST'])
+def pada_1():
+    if request.method == 'GET':
+        if request.files:
+            image = request.files['image']
+
+            # .save, method on the filestorage
+            image.save(os.path.join(
+                app.config['IMAGE_UPLOADS'], image.filename))
+
+            print('Image Saved')
+            return redirect(request.url)
+            # pass
+    return render_template('/pada_1.html')
 
 
 # if __name__ == '__main__':
