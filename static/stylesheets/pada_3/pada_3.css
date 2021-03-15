@@ -1,0 +1,15 @@
+/* @import url("../reset.css"); */
+@import url("../common.css");
+
+header,
+main{
+    text-align: center;
+    margin: .5rem auto;
+}
+
+label,
+input,
+button{
+    padding: .3rem;
+    margin: .3rem;
+}

@@ -1,18 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <a href="/pada_2">week 3</a>
-    <p>呼...</p>
-    <a href="/pada_1">pada_1</a>
-    <p>恩...</p>
+{% extends 'layout.html' %}
+{% block index_head_link%}
+    <link rel="stylesheet" href="static/stylesheets/index.css">
+{% endblock %}
+{% block h1 %}
+    <h1>{{web_info.dir_t}}</h1>
+{% endblock %}
+{% block index %}
+    <div>
+        <a href="/">week 4</a>
+        <p>登入頁面</p>
+    </div>
+    <div>
+        <a href="/pada_2">week 3</a>
+        <p>api + ajax</p>
+    </div> 
+    <div>
+        <a href="/pada_1">pada_1</a>
+        <p>恩...</p>
+    </div> 
     {% if show_link %}
     <p>{{author_name}}</p>
     {% endif%}
-</body>
-</html>
+{% endblock %}
