@@ -1,6 +1,8 @@
 note.py
 note_scss.py
 jinjia.py
+key.json
+static/js/pada_3.js
 
 __pycache__
 .DS_Store

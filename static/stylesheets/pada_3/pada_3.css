@@ -9,7 +9,12 @@ main{
 
 label,
 input,
-button{
+button,
+h3 a{
     padding: .3rem;
     margin: .3rem;
+}
+a{
+    padding: 1rem;
+    margin: 1rem;
 }

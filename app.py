@@ -1,6 +1,11 @@
 import os
-from flask import Flask, render_template, request, redirect
+import time
+import datetime
+#from flask_wtf import FlaskForm
+from flask import Flask, render_template, request, session, redirect, url_for, flash, jsonify
+
 app = Flask(__name__)
+app.config['SECRET_KEY'] = "pada_app"
 
 author_name = "K"
 web_info = {
@@ -24,9 +29,50 @@ titles = ['pada_0']
 show_link = False
 
 
-@app.route('/')
+class User:
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.password = password
+
+    def __repr__(self):
+        return f'[User]: {self.username}'
+
+
+users = []
+users.append(User(id=1, username='test', password='test'))
+print(users)
+
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    print('logining')
+
     return render_template('/pada_3.html',
+                           web_info=web_info,
+                           )
+
+
+@app.route('/signin', methods=['POST'])
+def signin():
+    username = request.form['username']
+    password = request.form['password']
+    if (username == 'test') and (password == 'test'):
+        return redirect('/member/')
+    else:
+        return redirect('/error/')
+
+
+@app.route('/member/', methods=['GET', 'POST'])
+def member():
+    return render_template('member.html',
+                           web_info=web_info
+                           )
+
+
+@app.route('/error/')
+def error():
+    return render_template('error.html',
                            web_info=web_info
                            )
 
@@ -70,7 +116,7 @@ def pada_1():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+    app.run(debug=True, port=5000)
 # if __name__ == '__main__':
 #     port = int(os.environ.get("PORT", 5000))
 #     app.run(debug=True, port=port, host="0.0.0.0")
